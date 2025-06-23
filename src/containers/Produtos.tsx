@@ -2,32 +2,28 @@ import { useGetProdutosQuery } from '../store/services/api';
 import Produto from '../components/Produto';
 import Header from '../components/Header';
 import { Container } from './styles';
-
-interface ProdutoType {
-  id: number;
-  nome: string;
-  preco: number;
-}
+import { JSX } from 'react/jsx-runtime';
 
 const Produtos = () => {
   const { data: produtos, isLoading } = useGetProdutosQuery();
+
+  if (isLoading) return <p>Carregando produtos...</p>;
 
   return (
     <>
       <Header />
       <Container>
-        <h2>Produtos</h2>
-        {isLoading && <p>Carregando...</p>}
-        <div className="lista-produtos">
-          {produtos?.map((produto: ProdutoType) => (
-            <Produto
-              key={produto.id}
-              id={produto.id}
-              nome={produto.nome}
-              preco={produto.preco}
-            />
-          ))}
-        </div>
+        {produtos?.map(
+          (
+            produto: JSX.IntrinsicAttributes & {
+              id: number;
+              nome: string;
+              preco: number;
+            }
+          ) => (
+            <Produto key={produto.id} {...produto} />
+          )
+        )}
       </Container>
     </>
   );

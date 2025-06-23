@@ -4,13 +4,13 @@ import { toggleFavorite } from '../../store/slices/favoritesSlice';
 import { RootState } from '../../store';
 import { Container, Button } from './styles';
 
-interface ProdutoProps {
+type Props = {
   id: number;
   nome: string;
   preco: number;
-}
+};
 
-const Produto = ({ id, nome, preco }: ProdutoProps) => {
+const Produto = ({ id, nome, preco }: Props) => {
   const dispatch = useDispatch();
   const favoritos = useSelector((state: RootState) => state.favorites.items);
   const isFavorito = favoritos.includes(id);
@@ -23,7 +23,7 @@ const Produto = ({ id, nome, preco }: ProdutoProps) => {
         Adicionar ao carrinho
       </Button>
       <Button onClick={() => dispatch(toggleFavorite(id))}>
-        {isFavorito ? '❤️ Remover favorito' : '🤍 Favoritar'}
+        {isFavorito ? 'Desfavoritar' : 'Favoritar'}
       </Button>
     </Container>
   );

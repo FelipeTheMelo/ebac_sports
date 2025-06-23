@@ -1,19 +1,14 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "nome": "Camisa",
-            "preco": 99.9
-        },
-        {
-            "id": 2,
-            "nome": "Bermuda",
-            "preco": 79.9
-        },
-        {
-            "id": 3,
-            "nome": "Tênis",
-            "preco": 249.9
-        }
-    ]
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Tênis Esportivo",
+      "preco": 199.99
+    },
+    {
+      "id": 2,
+      "nome": "Camiseta de Corrida",
+      "preco": 89.9
+    }
+  ]
 }

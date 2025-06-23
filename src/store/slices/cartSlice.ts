@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface Produto {
+type Produto = {
   id: number;
   nome: string;
   preco: number;
-}
+};
 
-interface CartState {
+type CartState = {
   items: Produto[];
-}
+};
 
 const initialState: CartState = {
   items: [],

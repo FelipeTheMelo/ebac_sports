@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface FavoritesState {
+type FavoritesState = {
   items: number[];
-}
+};
 
 const initialState: FavoritesState = {
   items: [],

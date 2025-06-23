@@ -3,18 +3,19 @@ import { RootState } from '../../store';
 import { Container } from './styles';
 
 const Header = () => {
-  const favoritosCount = useSelector(
-    (state: RootState) => state.favorites.items.length
-  );
   const itensNoCarrinho = useSelector(
     (state: RootState) => state.cart.items.length
+  );
+  const favoritos = useSelector(
+    (state: RootState) => state.favorites.items.length
   );
 
   return (
     <Container>
       <h1>EBAC Sports</h1>
       <div>
-        ❤️ {favoritosCount} favoritos | 🛒 {itensNoCarrinho} itens
+        <p>❤️ {favoritos}</p>
+        <p>Carrinho: {itensNoCarrinho} itens</p>
       </div>
     </Container>
   );
