@@ -1,4 +1,4 @@
-import type { Produto as ProdutoType } from '../../types'
+import { Produto as ProdutoType } from '../../App'
 import * as S from './styles'
 
 type Props = {
